@@ -36,12 +36,16 @@ function data(v) {
 }
 
 function next(l) {
-  write("Next<span class='next' onclick='"+ l +"()'> </span>", "choice");
+  write("Next<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
 }
 
 function yesno(t,y,n) {
   write(t, "choice");
-  write("Yes<span class='next' onclick='"+ y +"()'> </span> No<span class='next' onclick='"+ n +"()'> </span>", "choice");
+  write("Yes<span class='next' onclick='"+ fn(y) +"'> </span> No<span class='next' onclick='"+ fn(n) +"'> </span>", "choice");
+}
+
+function fn(x) {
+  return 'n.'+ x +'()';
 }
 
 function seek(t) {
@@ -63,7 +67,7 @@ function seek(t) {
 
 function choice(n,t,l) {
   if (n != '0')
-    write("Option "+ n +") "+ t +"<span class='next' onclick='"+ l +"()'> </span>", "choice");
+    write("Option "+ n +") "+ t +"<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
   else
-    write(t + "<span class='next' onclick='"+ l +"()'> </span>", "choice");
+    write(t + "<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
 }
