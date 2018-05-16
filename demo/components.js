@@ -45,8 +45,8 @@ function input(v) {
   return "<input type='text' onkeyup='setinput(this,\""+ v +"\")'>";
 }
 
-function setinput(q,v) { // support for input
-  player[v] = q.value;
+function setinput(b,v) {
+  player[v] = b.value;
   q.className = 'active';
 }
 
@@ -65,12 +65,12 @@ function seek(t) {
 
     while (t.includes("$",a+1)) {
       a = t.indexOf("$",b);
-	  msg += t.substring(b,a); // text before chunk
+	  msg += t.substring(b,a); // text before command
 
       b = t.indexOf(")",a);
-	  msg += eval(t.substring(a+1,b+1)); // evaluate chunk
+	  msg += eval(t.substring(a+1,b+1)); // evaluate command
     }
-	msg += t.substring(b+1); // text after last chunk
+	msg += t.substring(b+1); // text after last command
     return msg;
 
   } else return t;
