@@ -12,6 +12,30 @@ function message(t) {
   write(t,"message");
 }
 
+
+// page functions
+function choice(n,t,p) {
+  if (n != '0')
+    write("Option "+ n +") "+ t +"<span class='next' onclick='"+ fn(p) +"'> </span>", "choice");
+  else
+    write(t + "<span class='next' onclick='"+ fn(p) +"'> </span>", "choice");
+}
+
+function next(p) {
+  write("Next<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
+}
+
+function yesno(t,y,n) {
+  write(t, "choice");
+  write("Yes<span class='next' onclick='"+ fn(y) +"'> </span> No<span class='next' onclick='"+ fn(n) +"'> </span>", "choice");
+}
+
+function fn(p) {
+  return 'n.'+ p +'()';
+}
+
+
+// data functions
 function data(v) {
   console.log("v: " + v);
   return "<span class='data'>" + player[v] + "</span>";
@@ -26,25 +50,6 @@ function setinput(q,v) { // support for input
   q.className = 'active';
 }
 
-function next(p) {
-  write("Next<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
-}
-
-function yesno(t,y,n) {
-  write(t, "choice");
-  write("Yes<span class='next' onclick='"+ fn(y) +"'> </span> No<span class='next' onclick='"+ fn(n) +"'> </span>", "choice");
-}
-
-function choice(n,t,p) {
-  if (n != '0')
-    write("Option "+ n +") "+ t +"<span class='next' onclick='"+ fn(p) +"'> </span>", "choice");
-  else
-    write(t + "<span class='next' onclick='"+ fn(p) +"'> </span>", "choice");
-}
-
-function fn(p) {
-  return 'n.'+ p +'()';
-}
 
 function write(t,c) {
   if (Array.isArray(t))
