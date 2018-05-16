@@ -11,7 +11,7 @@ a: function(){
   "\"Ah Patient you are awake at last!\" Says a mechanical voice as a small grey floating droid darts into your vision. \"My sensors report you are are still recovering from the event; Take your time to adjust to your surroundings and then please comply with your name.\"",
   "Scanning the room for a moment leaves you more confused and even with a sense of alarm... as if having an unusual droid appear in front of you wasn't enough, this wasn't your bedroom. It was some sort of medical room? A doctor's surgery maybe... did you have some sort of accident? The droid beeps again to grab your attention. \"Your name please.\""
   ]);
-  choice('1',"my name is $input('name').",'a1');
+  choice('1',"my name is $input('name')",'a1');
   choice('2',"What... What's happening here?",'a2');
 },
 

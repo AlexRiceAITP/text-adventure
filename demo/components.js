@@ -22,7 +22,7 @@ function choice(n,t,p) {
 }
 
 function next(p) {
-  write("Next<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
+  write("Next<span class='next' onclick='"+ fn(p) +"'> </span>", "choice");
 }
 
 function yesno(t,y,n) {
@@ -37,7 +37,6 @@ function fn(p) {
 
 // data functions
 function data(v) {
-  console.log("v: " + v);
   return "<span class='data'>" + player[v] + "</span>";
 }
 
@@ -47,7 +46,7 @@ function input(v) {
 
 function setinput(b,v) {
   player[v] = b.value;
-  q.className = 'active';
+  b.className = 'active';
 }
 
 
@@ -68,7 +67,7 @@ function seek(t) {
 	  msg += t.substring(b,a); // text before command
 
       b = t.indexOf(")",a);
-	  msg += eval(t.substring(a+1,b+1)); // evaluate command
+	  msg += eval(t.substring(a+1,b+1)); // execute command
     }
 	msg += t.substring(b+1); // text after last command
     return msg;
