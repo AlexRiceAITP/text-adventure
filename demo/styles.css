@@ -1,0 +1,23 @@
+span.data {
+  color: blue;}
+
+span.next {
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 9px;
+  margin: 0 0 -3px 5px;
+  text-align: center;
+  height:15px; width:15px;}
+
+span.next:before {
+  content: '\25B6';}
+
+input + span.next {
+  display: none;}
+
+input.active + span.next {
+  display: inline-block;}
+
+p.message {
+  font-family: sans-serif;}
