@@ -12,8 +12,6 @@ function message(t) {
   write(t,"message");
 }
 
-
-// functions that get and set data
 function input(v) {
   return "<input type='text' onkeyup='setinput(this,\""+ v +"\")'>";
 }
@@ -28,8 +26,6 @@ function data(v) {
   return "<span class='data'>" + player[v] + "</span>";
 }
 
-
-// functions that call pages
 function next(l) {
   write("Next<span class='next' onclick='"+ fn(l) +"'> </span>", "choice");
 }
@@ -49,10 +45,6 @@ function choice(n,t,l) {
 function fn(x) {
   return 'n.'+ x +'()';
 }
-
-
-
-
 
 function write(t,c) {
   if (Array.isArray(t))
@@ -78,4 +70,3 @@ function seek(t) {
 
   } else return t;
 }
-

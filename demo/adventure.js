@@ -30,17 +30,15 @@ a1: function(){
   "\"Thank you, $data('name'). Your name has been logged. Please proceed through the doors ahead and head up the corridor to the examination office, the admin team will be waiting for you.\"",
   "The droid whizzes off into a small slot in the wall. That's the end of the droid for the moment you guess. You could examine the room for further information and then proceed down the corridor to this \"Examination office.\" After all, there's nothing stopping what you do first."]);
   choice('1',"Examine the room",'a3');
-  choice('2',"Look through files",'a4');
-  choice('3',"Head to the examination office",'a5');
+  choice('2',"Head to the examination office",'a5');
 },
 
 a3: function(){
 clear();
   message(
   "The room seems to be have a medical theme too it, a lot of the apparatuses seem strange it's not any sort of equipment you've seen before. It seems way to high tech for an average hospital... if you're even in a hospital?");
-  choice('1',"Examine the room",'a3');
-  choice('2',"Look through files",'a4');
-  choice('3',"Head to the examination office",'a5');
+  choice('1',"Look through files",'a4');
+  choice('2',"Head to the examination office",'a5');
 },
 
 a4: function(){
